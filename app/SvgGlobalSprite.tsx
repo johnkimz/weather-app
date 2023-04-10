@@ -4,7 +4,7 @@ import SvgCloud from '@/components/SvgIcons/Cloud';
 import SvgRain from '@/components/SvgIcons/Rain';
 import SvgSun from '@/components/SvgIcons/Sun';
 
-export default function SvgGlobalSprite() {
+const SvgGlobalSprite = () => {
 	return (
 		<SvgSprite>
 			<SvgAdd />
@@ -13,4 +13,6 @@ export default function SvgGlobalSprite() {
 			<SvgSun />
 		</SvgSprite>
 	);
-}
+};
+
+export default SvgGlobalSprite;
