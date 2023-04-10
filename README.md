@@ -30,3 +30,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 7. cookies to save geolocation & weather box order
 8. Tests
 9. Extensions
+
+Favicon: https://en.wikipedia.org/wiki/File:Circle-icons-weather.svg
