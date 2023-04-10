@@ -1,5 +1,5 @@
-import { data, ICoordinatLocation } from './data';
 import { NextRequest, NextResponse } from 'next/server';
+import { data, ICoordinatLocation } from '@/api/coordinates/[location]/data';
 
 interface IParams {
 	location: string;
@@ -20,7 +20,7 @@ export async function GET(
 			return new Response('Missing Coordinate Location', { status: 404 });
 		}
 
-		const coordinates = data[location];
+		const coordinates: ICoordinatLocation = data[location];
 
 		if (coordinates) {
 			return NextResponse.json({ data: coordinates });
