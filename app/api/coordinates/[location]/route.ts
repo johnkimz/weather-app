@@ -17,7 +17,7 @@ export async function GET(
 		const location = params.location;
 
 		if (!location) {
-			return new Response('Missing Coordinate Location', { status: 400 });
+			return new Response('Missing Coordinate Location', { status: 404 });
 		}
 
 		const coordinates = data[location];
