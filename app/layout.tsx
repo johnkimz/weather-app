@@ -1,4 +1,5 @@
 import './globals.css';
+import SvgGlobalSprite from './SvgGlobalSprite';
 
 export const metadata = {
 	title: 'Weather App',
@@ -12,7 +13,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body>{children}</body>
+			<body>
+				<SvgGlobalSprite />
+				{children}
+			</body>
 		</html>
 	);
 }
