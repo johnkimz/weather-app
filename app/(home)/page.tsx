@@ -5,8 +5,8 @@ import { TemperatureUnitProvider } from '@/components/TemperatureUnitToggle/cont
 
 export default function Home() {
 	return (
-		<main>
-			<section>
+		<main className={styles.main}>
+			<section className={styles.content}>
 				<TemperatureUnitProvider>
 					<TemperatureUnitToggle />
 					<WeatherCard />

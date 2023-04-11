@@ -1,0 +1,9 @@
+.main {
+	padding-top: calc(var(--nav-height) * 2);
+}
+
+.content {
+	max-width: var(--content-max-width);
+	margin: 0px auto;
+	padding: 0px 12px;
+}
