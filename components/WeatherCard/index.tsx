@@ -1,6 +1,12 @@
+import { Suspense } from 'react';
 import WeatherCardTemp from '@/components/WeatherCardTemp';
 import WeatherCardIcon from '@/components/WeatherCardIcon';
 import styles from './styles.module.css';
+
+interface IWeatherCard {
+	lat: number;
+	lng: number;
+}
 
 async function getForecast(lat: number, lng: number) {
 	const res = await fetch(
@@ -15,21 +21,22 @@ async function getForecast(lat: number, lng: number) {
 	return {};
 }
 
-const WeatherCard = async ({ location = 'New York', lat = 111, lng = 222 }) => {
+const WeatherCard = async ({ lat, lng }: IWeatherCard) => {
 	const forecast = await getForecast(lat, lng);
 
 	return (
-		<section>
-			<h2>{location}</h2>
-			<WeatherCardIcon type={forecast?.weather} />
-			<div>{forecast?.weather}</div>
-			<div>
-				High: <WeatherCardTemp temp={forecast?.temp?.high} />
-			</div>
-			<div>
-				Low: <WeatherCardTemp temp={forecast?.temp?.low} />
-			</div>
-		</section>
+		<Suspense fallback={<p>Loading feed...</p>}>
+			<section>
+				<WeatherCardIcon type={forecast?.weather} />
+				<div>{forecast?.weather}</div>
+				<div>
+					High: <WeatherCardTemp temp={forecast?.temp?.high} />
+				</div>
+				<div>
+					Low: <WeatherCardTemp temp={forecast?.temp?.low} />
+				</div>
+			</section>
+		</Suspense>
 	);
 };
 
