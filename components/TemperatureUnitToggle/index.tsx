@@ -1,24 +1,21 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/router';
 import { useTemperatureUnit, UNIT_F, UNIT_C } from './context';
 import styles from './styles.module.css';
 
 const TemperatureUnitToggle = () => {
-	// const router = useRouter();
 	const { unit, onToggle } = useTemperatureUnit();
 
 	return (
 		<aside>
 			<button
-				className={unit === UNIT_F ? styles.selcted : ''}
+				className={unit === UNIT_F ? styles.selected : ''}
 				onClick={() => onToggle(UNIT_F)}
 			>
 				&deg; F
 			</button>
 			<button
-				className={unit === UNIT_C ? styles.selcted : ''}
+				className={unit === UNIT_C ? styles.selected : ''}
 				onClick={() => onToggle(UNIT_C)}
 			>
 				&deg; C

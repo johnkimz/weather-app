@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { data, IWeatherForecast } from '@/api/forecast/[lat]/[lng]/data';
-import { delay } from '@/lib/utils';
+import { delay } from '@/lib/delay';
 
 interface IParams {
 	lat: string;

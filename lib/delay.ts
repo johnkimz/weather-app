@@ -5,7 +5,3 @@ export function delay(time: number) {
 		}, time);
 	});
 }
-
-export function convertFahrenheitToCelsius(deg: number) {
-	return Math.round(((deg - 32) * 5) / 9);
-}
