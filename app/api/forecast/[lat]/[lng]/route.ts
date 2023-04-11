@@ -15,6 +15,6 @@ export async function GET(
 		params: IParams;
 	}
 ) {
-	await delay(5000);
+	// await delay(5000);
 	return NextResponse.json({ data });
 }
