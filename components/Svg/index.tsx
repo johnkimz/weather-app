@@ -1,8 +1,8 @@
 interface ISvg {
-	ariaHidden: boolean;
-	ariaLabel: string;
-	className: string;
-	focusable: boolean;
+	ariaHidden?: boolean;
+	ariaLabel?: string;
+	className?: string;
+	focusable?: boolean;
 	use: string;
 }
 
