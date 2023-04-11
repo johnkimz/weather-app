@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 
 export const UNIT_F = 'fahrenheit';
 export const UNIT_C = 'celsius';
-export const TemperatureUnitCookie = 'temperatureUnit';
+export const TEMPERATURE_UNIT_COOKIE = 'temperatureUnit';
 
 const TemperatureUnitContext = React.createContext<
 	{ unit: string; onToggle: (nextUnit: string) => void } | undefined
@@ -17,13 +17,13 @@ export function TemperatureUnitProvider({
 	children: React.ReactNode;
 }) {
 	const [unit, setUnit] = useState(
-		Cookies.get(TemperatureUnitCookie) || UNIT_F
+		Cookies.get(TEMPERATURE_UNIT_COOKIE) || UNIT_F
 	);
 
 	function onToggle(nextUnit: string) {
 		if (nextUnit !== unit) {
 			setUnit(nextUnit);
-			Cookies.set(TemperatureUnitCookie, nextUnit);
+			Cookies.set(TEMPERATURE_UNIT_COOKIE, nextUnit);
 		}
 	}
 
