@@ -2,7 +2,6 @@ import Svg from '@/components/Svg';
 import styles from './styles.module.css';
 
 const Navigation = () => {
-	console.log(styles);
 	return (
 		<header className={styles.header}>
 			<h1 className={styles.visuallyhidden} aria-hidden="true">
