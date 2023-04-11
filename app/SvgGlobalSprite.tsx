@@ -1,5 +1,6 @@
 import SvgSprite from '@/components/SvgSprite';
 import SvgAdd from '@/components/SvgIcons/Add';
+import SvgClose from '@/components/SvgIcons/Close';
 import SvgCloud from '@/components/SvgIcons/Cloud';
 import SvgLogo from '@/components/SvgIcons/Logo';
 import SvgRain from '@/components/SvgIcons/Rain';
@@ -9,6 +10,7 @@ const SvgGlobalSprite = () => {
 	return (
 		<SvgSprite>
 			<SvgAdd />
+			<SvgClose />
 			<SvgCloud />
 			<SvgLogo />
 			<SvgRain />
