@@ -14,21 +14,21 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## TODO
+# Objective
 
-- Why did I choose Next.js?
-- Do I need a state manager?
+In addition to the project’s requirements, I was recently inspired when learning about Next.JS’s implementation of React’s Client and Server Components in version 13 of their framework and I wanted to see what it would be like to build an app that primarily renders on the server. This is why I deliberately chose not to load an app store (e.g. Redux, Zustand, SWR) on the client for this exercise. It did take some time to read through Next’s documentation to figure out the suggested patterns for routing, data-fetching, and data mutation but the exercise was an interesting mental model shift from the SSR/CSR (hydration) pattern that I am more familiar with.
 
-## Strategy
+- The entry point is `<root>/app/page.tsx` which imports `<root>/app/(home)/page.tsx`
 
-1. Write Api routes and Mock responses
-2. Psuedo code tests
-3. Write client side weather boxes
-4. Write modal
-5. Write alert bar
-6. Get SVG icons and add SVG Sprite
-7. cookies to save geolocation & weather box order
-8. Tests
-9. Extensions
+- I mocked the api routes and added a `location: string` property to the response for ease of development.
 
-Favicon: https://en.wikipedia.org/wiki/File:Circle-icons-weather.svg
+- The forecast api returns a random generated temperature so this is why the location’s forecast changes per every page refresh or data fetch.
+
+- File/folder organization:
+
+  - Only pages and routes are in the <root>/app directory
+  - Client/Server components are in <root>/components directory
+  - Utils/Services are in the <root>/libs directory
+  - Component styles are co-located with the respective component
+
+- The primary means of storing user data is through cookies. It’s not an elegant solution, but the easiest to implement without the usage of additional client or server state/cache.
