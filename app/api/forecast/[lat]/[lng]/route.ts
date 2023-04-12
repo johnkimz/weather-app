@@ -42,24 +42,24 @@ export async function GET(
 
 		if (locationData) {
 			const hourly = MOCK_DATA_TIMES.map((hour) => ({
-				degree: randomInteger(45, 92),
+				degrees: randomInteger(45, 92),
 				time: hour,
 			}));
 
 			const high = hourly.reduce((prev, next) =>
-				prev.degree > next.degree ? prev : next
+				prev.degrees > next.degrees ? prev : next
 			);
 
 			const low = hourly.reduce((prev, next) =>
-				prev.degree < next.degree ? prev : next
+				prev.degrees < next.degrees ? prev : next
 			);
 
 			const data = {
 				location: locationData.location,
 				temp: {
 					hourly,
-					high: high.degree,
-					low: low.degree,
+					high: high.degrees,
+					low: low.degrees,
 				},
 				weather: ['cloudy', 'rain', 'sunny'][randomInteger(0, 2)],
 			};
