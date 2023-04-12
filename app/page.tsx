@@ -1,2 +1,2 @@
-import page from '@/app/(home)';
+import page from '@/app/(home)/page';
 export default page;
