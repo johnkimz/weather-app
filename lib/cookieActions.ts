@@ -9,7 +9,7 @@ export function getLocations(value: string) {
 		const locations = value?.split?.('|');
 
 		return locations?.reduce?.((acc, item) => {
-			const decodeCoordinates = decodeURI(item);
+			const decodeCoordinates = decodeURIComponent(item);
 			const coordinates = decodeCoordinates?.split?.(',');
 			const [lat, lng] = coordinates;
 
@@ -32,7 +32,7 @@ export function getLocations(value: string) {
 }
 
 export function addLocation(value: string, { lat, lng }: ILocation) {
-	const newValue = encodeURI(`${lat},${lng}`);
+	const newValue = encodeURIComponent(`${lat},${lng}`);
 	return `${newValue}|${value}`;
 }
 
