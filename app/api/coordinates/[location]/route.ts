@@ -1,8 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { data, ICoordinatLocation } from '@/api/coordinates/[location]/data';
+import { MOCK_DATA_LOCATIONS } from '@/api/mockData';
 
 interface IParams {
 	location: string;
+}
+
+interface ICoordinatLocation {
+	location: string;
+	lat: string;
+	lng: string;
 }
 
 export async function GET(
@@ -14,13 +20,15 @@ export async function GET(
 	}
 ) {
 	try {
-		const location = params.location;
+		const location = decodeURIComponent(params.location);
 
 		if (!location) {
 			return new Response('Missing Coordinate Location', { status: 404 });
 		}
 
-		const coordinates: ICoordinatLocation = data[location];
+		const coordinates: ICoordinatLocation = MOCK_DATA_LOCATIONS.find(
+			(item) => item.location === location
+		);
 
 		if (coordinates) {
 			return NextResponse.json({ data: coordinates });
@@ -30,6 +38,6 @@ export async function GET(
 			status: 400,
 		});
 	} catch (err) {
-		return new Response('Error handling ', { status: 500 });
+		return new Response('Error handling coordinates location', { status: 500 });
 	}
 }

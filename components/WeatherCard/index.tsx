@@ -7,6 +7,7 @@ interface IWeatherCard {
 	index: number;
 	lat: number;
 	lng: number;
+	location: string;
 }
 
 async function getForecast(lat: number, lng: number) {
@@ -28,6 +29,7 @@ const WeatherCard = async ({ lat, lng, index }: IWeatherCard) => {
 	return (
 		<section>
 			<WeatherCardActions index={index} />
+			<h3>{forecast?.location}</h3>
 			<WeatherCardIcon type={forecast?.weather} />
 			<div>{forecast?.weather}</div>
 			<div>

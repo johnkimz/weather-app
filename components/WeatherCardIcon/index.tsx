@@ -1,9 +1,3 @@
-import {
-	useTemperatureUnit,
-	UNIT_F,
-	UNIT_C,
-} from '@/components/TemperatureUnitToggle/context';
-import { getCelsius } from '@/lib/temperature';
 import Svg from '@/components/Svg';
 import styles from './styles.module.css';
 

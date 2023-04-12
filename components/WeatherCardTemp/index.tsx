@@ -1,10 +1,8 @@
 'use client';
-import {
-	useTemperatureUnit,
-	UNIT_F,
-	UNIT_C,
-} from '@/components/TemperatureUnitToggle/context';
+
+import { CONSTANTS } from '@/app/constants';
 import { getCelsius } from '@/lib/temperature';
+import { useTemperatureUnit } from '@/components/TemperatureUnitToggle/context';
 import styles from './styles.module.css';
 
 interface ITemp {
@@ -17,7 +15,7 @@ const WeatherCardTemp = ({ className, temp }: ITemp) => {
 
 	return (
 		<span className={className}>
-			{unit === UNIT_C ? getCelsius(temp) : temp}
+			{unit === CONSTANTS.UNIT_C ? getCelsius(temp) : temp}
 		</span>
 	);
 };

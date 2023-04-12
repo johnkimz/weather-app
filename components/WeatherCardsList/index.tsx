@@ -1,9 +1,8 @@
 import { Suspense } from 'react';
 import { cookies } from 'next/headers';
+import { CONSTANTS } from '@/app/constants';
 import WeatherCard from '@/components/WeatherCard';
 import { getLocations } from '@/lib/cookieActions';
-
-export const WEATHER_CARDS_COOKIE = 'locations';
 
 interface ILocation {
 	hash: string;
@@ -14,12 +13,12 @@ interface ILocation {
 
 const WeatherCardsList = () => {
 	try {
-		const locationsCookie = cookies().get(WEATHER_CARDS_COOKIE);
+		const locationsCookie = cookies().get(CONSTANTS.LOCATIONS_COOKIE);
 		const { name, value } = locationsCookie || {};
 		const locations = getLocations(value);
 
 		return (
-			<ul>
+			<div>
 				{locations.map((loc: ILocation, index: number) => (
 					<WeatherCard
 						key={loc?.hash}
@@ -28,10 +27,10 @@ const WeatherCardsList = () => {
 						index={index}
 					/>
 				))}
-			</ul>
+			</div>
 		);
 	} catch (err) {
-		console.error(`Error parsing '${WEATHER_CARDS_COOKIE}' cookie`, err);
+		console.error(`Error parsing '${CONSTANTS.LOCATIONS_COOKIE}' cookie`, err);
 	}
 
 	return null;

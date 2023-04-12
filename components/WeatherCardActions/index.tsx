@@ -3,7 +3,9 @@
 import { useRouter } from 'next/navigation';
 import { useTransition } from 'react';
 import Svg from '@/components/Svg';
+import Button from '@/components/Button';
 import { removeLocation } from '@/lib/cookieActions';
+import { CONSTANTS } from '@/app/constants';
 import Cookies from 'js-cookie';
 import styles from './styles.module.css';
 
@@ -12,8 +14,8 @@ const WeatherCardActions = ({ index }) => {
 	const [isPending, startTransition] = useTransition();
 
 	function onRemove() {
-		const prevCookie = Cookies.get('locations');
-		Cookies.set('locations', removeLocation(prevCookie, index));
+		const prevCookie = Cookies.get(CONSTANTS.LOCATIONS_COOKIE);
+		Cookies.set(CONSTANTS.LOCATIONS_COOKIE, removeLocation(prevCookie, index));
 
 		startTransition(() => {
 			router.refresh();
@@ -21,9 +23,9 @@ const WeatherCardActions = ({ index }) => {
 	}
 
 	return (
-		<button className={styles.remove} onClick={onRemove}>
+		<Button className={styles.remove} onClick={onRemove} type="icon">
 			<Svg use="#g-svg-close" />
-		</button>
+		</Button>
 	);
 };
 

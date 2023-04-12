@@ -1,5 +1,6 @@
 import Svg from '@/components/Svg';
 import styles from './styles.module.css';
+import Add from './add';
 
 const Navigation = () => {
 	return (
@@ -11,6 +12,7 @@ const Navigation = () => {
 				<nav className={styles.nav}>
 					<Svg use="#g-svg-logo" className={styles.logo} />
 					<button>Edit</button>
+					<Add />
 				</nav>
 			</div>
 		</header>

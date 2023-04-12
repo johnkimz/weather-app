@@ -1,0 +1,17 @@
+.btn {
+	background-color: #e0995e;
+	border: 1px solid #000;
+	border-radius: 4px;
+	line-height: 1.25;
+	padding: 0.625rem 1rem;
+	text-align: center;
+	cursor: pointer;
+	color: #000;
+	outline-offset: 2px;
+}
+
+.icon {
+	background: none;
+	padding: 0.25rem;
+	border: none;
+}

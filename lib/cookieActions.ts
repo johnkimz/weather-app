@@ -32,12 +32,8 @@ export function getLocations(value: string) {
 }
 
 export function addLocation(value: string, { lat, lng }: ILocation) {
-	if (value) {
-		const newValue = encodeURI(`${lat},${lng}`);
-		return `${newValue}|${value}`;
-	}
-
-	return '';
+	const newValue = encodeURI(`${lat},${lng}`);
+	return `${newValue}|${value}`;
 }
 
 export function removeLocation(value: string, index: number = 0) {
