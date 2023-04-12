@@ -1,6 +1,6 @@
 import Svg from '@/components/Svg';
+import TemperatureUnitToggle from '@/components/TemperatureUnitToggle';
 import styles from './styles.module.css';
-import Add from './add';
 
 const Navigation = () => {
 	return (
@@ -11,8 +11,7 @@ const Navigation = () => {
 			<div className={styles.wrapper}>
 				<nav className={styles.nav}>
 					<Svg use="#g-svg-logo" className={styles.logo} />
-					<button>Edit</button>
-					<Add />
+					<TemperatureUnitToggle />
 				</nav>
 			</div>
 		</header>

@@ -1,6 +1,5 @@
 import './globals.css';
 import { Roboto } from 'next/font/google';
-import Navigation from '@/components/Navigation';
 import SvgGlobalSprite from './SvgGlobalSprite';
 
 export const metadata = {
@@ -23,7 +22,6 @@ export default function RootLayout({
 		<html lang="en" className={roboto.className}>
 			<body>
 				<SvgGlobalSprite />
-				<Navigation />
 				{children}
 			</body>
 		</html>

@@ -7,20 +7,22 @@ import styles from './styles.module.css';
 const TemperatureUnitToggle = () => {
 	const { unit, onToggle } = useTemperatureUnit();
 	return (
-		<aside>
-			<button
-				className={unit === CONSTANTS.UNIT_F ? styles.selected : ''}
-				onClick={() => onToggle(CONSTANTS.UNIT_F)}
-			>
-				&deg; F
-			</button>
-			<button
-				className={unit === CONSTANTS.UNIT_C ? styles.selected : ''}
-				onClick={() => onToggle(CONSTANTS.UNIT_C)}
-			>
-				&deg; C
-			</button>
-		</aside>
+		<div className={styles.toggle}>
+			<span className={styles.label}>&deg;F</span>
+			<label className={styles.toggler}>
+				<input
+					type="checkbox"
+					checked={unit === CONSTANTS.UNIT_C}
+					onChange={() =>
+						onToggle(
+							unit === CONSTANTS.UNIT_C ? CONSTANTS.UNIT_F : CONSTANTS.UNIT_C
+						)
+					}
+				/>
+				<span className={styles.slider} />
+			</label>
+			<span className={styles.label}>&deg;C</span>
+		</div>
 	);
 };
 

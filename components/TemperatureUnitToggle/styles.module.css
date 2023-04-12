@@ -1,3 +1,51 @@
-.selected {
-	color: red;
+.toggle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.label {
+	display: inline-block;
+	margin: 0px 5px;
+}
+
+.toggler {
+	display: inline-block;
+	height: 17px;
+	position: relative;
+	width: 30px;
+}
+
+.toggler input {
+	height: 0px;
+	opacity: 0;
+	width: 0px;
+}
+
+.slider {
+	background-color: #4f5d73;
+	bottom: 0px;
+	border-radius: 17px;
+	cursor: pointer;
+	left: 0px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	transition: 0.4s;
+}
+
+.slider:before {
+	background-color: white;
+	border-radius: 50%;
+	bottom: 2px;
+	content: '';
+	height: 13px;
+	left: 2px;
+	position: absolute;
+	transition: 0.4s;
+	width: 13px;
+}
+
+input:checked + .slider:before {
+	transform: translateX(13px);
 }
