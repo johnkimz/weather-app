@@ -1,11 +1,13 @@
+import cn from 'classnames';
 import Svg from '@/components/Svg';
 import styles from './styles.module.css';
 
 interface IIcon {
+	className?: string;
 	type: 'cloudy' | 'rain' | 'sunny';
 }
 
-const WeatherCardIcon = ({ type }: IIcon) => {
+const WeatherCardIcon = ({ className, type }: IIcon) => {
 	let icon = '';
 
 	switch (type) {
@@ -20,7 +22,12 @@ const WeatherCardIcon = ({ type }: IIcon) => {
 			break;
 	}
 
-	return icon ? <Svg use={icon} className={styles[type]} /> : null;
+	return icon ? (
+		<div className={cn(styles.icon, className)}>
+			<Svg use={icon} className={styles[type]} />
+			<div className={styles.caption}>{type}</div>
+		</div>
+	) : null;
 };
 
 export default WeatherCardIcon;

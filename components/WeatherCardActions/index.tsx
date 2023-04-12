@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useTransition } from 'react';
+import cn from 'classnames';
 import Svg from '@/components/Svg';
 import Button from '@/components/Button';
 import { removeLocation } from '@/lib/cookieActions';
@@ -9,7 +10,12 @@ import { CONSTANTS } from '@/app/constants';
 import Cookies from 'js-cookie';
 import styles from './styles.module.css';
 
-const WeatherCardActions = ({ index }) => {
+interface IActions {
+	className: string;
+	index: number;
+}
+
+const WeatherCardActions = ({ className, index }: IActions) => {
 	const router = useRouter();
 	const [isPending, startTransition] = useTransition();
 
@@ -23,7 +29,11 @@ const WeatherCardActions = ({ index }) => {
 	}
 
 	return (
-		<Button className={styles.remove} onClick={onRemove} type="icon">
+		<Button
+			className={cn(styles.remove, className)}
+			onClick={onRemove}
+			type="icon"
+		>
 			<Svg use="#g-svg-close" />
 		</Button>
 	);

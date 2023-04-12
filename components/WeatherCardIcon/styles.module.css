@@ -1,10 +1,21 @@
+.icon {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .cloudy {
-	width: 80px;
-	height: 64px;
+	width: 40px;
+	height: 32px;
 }
 
 .rain,
 .sunny {
-	width: 64px;
-	height: 64px;
+	width: 32px;
+	height: 32px;
+}
+
+.caption {
+	font-size: 12px;
+	font-weight: bold;
 }

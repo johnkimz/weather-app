@@ -1,8 +1,8 @@
-import { Suspense } from 'react';
 import { cookies } from 'next/headers';
 import { CONSTANTS } from '@/app/constants';
 import WeatherCard from '@/components/WeatherCard';
 import { getLocations } from '@/lib/cookieActions';
+import styles from './styles.module.css';
 
 interface ILocation {
 	hash: string;
@@ -18,7 +18,7 @@ const WeatherCardsList = () => {
 		const locations = getLocations(value);
 
 		return (
-			<div>
+			<div className={styles.list}>
 				{locations.map((loc: ILocation, index: number) => (
 					<WeatherCard
 						key={loc?.hash}

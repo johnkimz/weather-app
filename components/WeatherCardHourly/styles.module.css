@@ -1,0 +1,32 @@
+.hourly {
+	margin-top: 20px;
+}
+
+.list {
+	list-style: none;
+	margin: 20px 0px 0px;
+	padding: 0px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+	gap: 5px;
+}
+
+.listitem {
+	margin: 0px 3px 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+.listitem span {
+	display: block;
+}
+
+.time {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.btn {
+	text-decoration: underline;
+	font-size: 14px;
+}
