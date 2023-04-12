@@ -152,16 +152,15 @@ export const MOCK_DATA_LOCATIONS = [
 ];
 
 export const MOCK_DATA_TIMES = [
-	'12:00pm',
-	'1:00pm',
-	'2:00pm',
-	'3:00pm',
-	'4:00pm',
-	'5:00pm',
-	'6:00pm',
-	'7:00pm',
-	'8:00pm',
-	'9:00pm',
-	'10:00pm',
-	'11:00pm',
+	'12pm',
+	'1pm',
+	'2pm',
+	'3pm',
+	'4pm',
+	'5pm',
+	'6pm',
+	'7pm',
+	'8pm',
+	'10pm',
+	'11pm',
 ];
